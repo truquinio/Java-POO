@@ -101,8 +101,17 @@ public class NIF {
 
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
-        System.out.println("Ingrese DNI:");
-        dni = leer.nextLong();
+        String dni2 = "";
+
+        do {
+
+            System.out.println("Ingrese DNI:");
+            dni = leer.nextLong();
+
+            dni2 = Integer.toString((int) dni);
+
+        } while (dni2.length() != 8);
+//      }while (dni < 9999999 && dni > 999999999);
 
         return new NIF(dni);
     }
